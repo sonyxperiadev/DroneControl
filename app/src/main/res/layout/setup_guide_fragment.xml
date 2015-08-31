@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~  Copyright (C) 2015 Sony Mobile Communications Inc.
+  ~
+  ~  All rights reserved.
+  ~
+  ~  Redistribution and use in source and binary forms, with or without
+  ~  modification, are permitted provided that the following conditions are met:
+  ~
+  ~  1. Redistributions of source code must retain the above copyright notice, this
+  ~     list of conditions and the following disclaimer.
+  ~
+  ~  2. Redistributions in binary form must reproduce the above copyright notice,
+  ~     this list of conditions and the following disclaimer in the documentation
+  ~     and/or other materials provided with the distribution.
+  ~  3. Neither the name of the copyright holder nor the names
+  ~     of its contributors may be used to endorse or promote products derived from
+  ~     this software without specific prior written permission.
+  ~
+  ~  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+  ~  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+  ~  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+  ~  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+  ~  FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+  ~  DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+  ~  SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  ~  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  ~  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  ~  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white">
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="@dimen/activity_margin"
+        android:text="@string/DG_TOP_ONE_STEP_TEXT"
+        android:textColor="@color/DG_BLUE"
+        android:textSize="14sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tv_connect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_desc"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:text="@string/DG_CONNECT_DEVICES"
+        android:textColor="@color/DG_BLUE"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_connect"
+        android:layout_marginTop="@dimen/activity_margin" >
+
+        <LinearLayout
+            android:id="@+id/layout_controller_connection"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/iv_controller_connected"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_gamepad_setup_guide_disabled"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                android:layout_weight="0"/>
+
+            <TextView
+                android:id="@+id/tv_controller_connected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/inner_margin"
+                android:text="@string/DG_CONNECT_DS"
+                android:textColor="@color/DG_BLUE"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/controller_connected_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="32dp"
+                android:src="@drawable/ic_check_setup_guide"
+                android:visibility="invisible"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/div1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/layout_controller_connection"
+            android:layout_margin="8dp"
+            android:background="@android:color/darker_gray"/>
+
+        <LinearLayout
+            android:id="@+id/layout_seg_connection"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@+id/div1"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/iv_seg_connected"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_glass_setup_guide_disabled"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                android:layout_weight="0"/>
+
+            <TextView
+                android:id="@+id/tv_seg_connected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/inner_margin"
+                android:text="@string/DG_CONNECT_SEG"
+                android:textColor="@color/DG_BLUE"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/connection_seg_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="32dp"
+                android:src="@drawable/ic_check_setup_guide"
+                android:visibility="invisible"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/div2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/layout_seg_connection"
+            android:layout_margin="8dp"
+            android:background="@android:color/darker_gray"/>
+
+        <LinearLayout
+            android:id="@+id/layout_drone_connection"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/div2"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/iv_drone_connected"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_drone_setup_guide_disabled"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                android:layout_weight="0"/>
+
+            <TextView
+                android:id="@+id/tv_drone_connected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/inner_margin"
+                android:text="@string/DG_CONNECT_PARROT"
+                android:textColor="@color/DG_BLUE"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/drone_connected_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="32dp"
+                android:text="Start >"
+                android:textColor="@color/DG_BLUE"
+                android:textStyle="bold"
+                android:visibility="invisible"
+                android:layout_gravity="center"
+                android:textSize="@dimen/abc_text_size_medium_material"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~  Copyright (C) 2015 Sony Mobile Communications Inc.
+  ~
+  ~  All rights reserved.
+  ~
+  ~  Redistribution and use in source and binary forms, with or without
+  ~  modification, are permitted provided that the following conditions are met:
+  ~
+  ~  1. Redistributions of source code must retain the above copyright notice, this
+  ~     list of conditions and the following disclaimer.
+  ~
+  ~  2. Redistributions in binary form must reproduce the above copyright notice,
+  ~     this list of conditions and the following disclaimer in the documentation
+  ~     and/or other materials provided with the distribution.
+  ~  3. Neither the name of the copyright holder nor the names
+  ~     of its contributors may be used to endorse or promote products derived from
+  ~     this software without specific prior written permission.
+  ~
+  ~  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+  ~  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+  ~  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+  ~  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+  ~  FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+  ~  DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+  ~  SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  ~  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  ~  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  ~  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="http://schemas.android.com/apk/res-auto" tools:ignore="MissingTranslation">
+
+    <string name="application_title">Drone Control (beta)</string>
+    <string name="application_title_splash"><![CDATA[ <b>D</b>rone <b>C</b>ontrol ]]></string>
+    <string name="application_title_settings">Drone Control Settings</string>
+    <string name="action_settings">About</string>
+    <string name="action_licenses">Legal licenses</string>
+    <string name="app_name">Drone Control (beta)</string>
+    <string name="close_application">Confirm exit?</string>
+    <string name="device_found">Device found. Connecting...</string>
+    <string name="device_not_found">Device not found</string>
+    <string name="go_home">Parrot is returning home!</string>
+    <string name="go_home_lbl">Return home</string>
+    <string name="high">High</string>
+    <string name="home_set">Home has been set</string>
+    <string name="home_set_lbl">Set home location</string>
+    <string name="low">Low</string>
+    <string name="med">Medium</string>
+    <string name="message_analog_to_move">Use sticks to move</string>
+    <string name="message_battery_level">%1$d%%</string>
+    <string name="message_critical_bat">critical battery</string>
+    <string name="message_critical_bat_flying_glass">Critical Battery! Landing!</string>
+    <string name="message_critical_bat_glass">Critical Battery!</string>
+    <string name="message_cut_out">Cut out</string>
+    <string name="message_good_job">Good Job!</string>
+    <string name="message_land">Land</string>
+    <string name="message_landed">Landed</string>
+    <string name="message_l3_jump">Press L3 to jump</string>
+    <string name="message_low_bat">low battery</string>
+    <string name="message_low_bat_glass">Low Battery!</string>
+    <string name="message_photo_success">Picture success</string>
+    <string name="message_photo_failed">Picture failed</string>
+    <string name="message_show_hud">Show HUD</string>
+    <string name="message_take_off">Take off</string>
+    <string name="message_taking_off">Taking off</string>
+    <string name="message_landing">Landing</string>
+    <string name="message_taking_pic">Taking picture</string>
+    <string name="message_recording_started">Recording started</string>
+    <string name="message_stop_rec">Stop REC</string>
+    <string name="message_recording">Recording</string>
+    <string name="message_rec_finished">Recording finished</string>
+    <string name="message_trick">Do trick</string>
+    <string name="message_trick_introduction">Hold triangle and directional to trick</string>
+    <string name="message_trick_done">Nice trick!</string>
+    <string name="message_turbo">Hold L2 or R2 to turbo</string>
+    <string name="message_wifi_signal_weak">Wi-Fi signal weak</string>
+    <string name="preference_activity_title">Drone Control Settings</string>
+    <string name="preference_debug">Enable logging</string>
+    <string name="preference_debug_summary">Log glass events to internal sdcard</string>
+    <string name="preference_version">Version</string>
+    <string name="settings_bar_max_altitude">Max altitude</string>
+    <string name="title_activity_bebop_media">BebopMediaActivity</string>
+    <string name="toast_connection_failed">Connection failed. Restart %s and try again</string>
+    <string name="toast_message_battery_flying">Parrot is out of battery! Landing!</string>
+    <string name="toast_message_battery_landed">Parrot is out of battery!</string>
+    <string name="toast_message_battery_low">Parrot battery is low!</string>
+    <string name="wait_gps">Waiting GPS Signal</string>
+    <string name="waiting_connection">Waiting device connection...</string>
+
+
+    <!-- Dialog button text, positive button -->
+    <string name="settings_button_ok">OK</string>
+
+    <!-- Title of item, option to show the open source licenses -->
+    <string name="settings_item_licenses">Open source licenses</string>
+
+    <!-- Startup -->
+    <string name="device_connection_title">Please wait</string>
+    <string name="device_connection_message">Initializing device...</string>
+
+    <!-- Calibration -->
+    <string name="calibration_calibrate_magnets">Please, calibrate the drone.</string>
+    <string name="calibrate_flip_forward">Flip the drone forward</string>
+    <string name="calibrate_roll">Roll drone to one side</string>
+    <string name="calibrate_yaw">Spin drone sideways</string>
+
+    <!-- SetupGuide and ConnectingToParrot fragments-->
+    <string name="DG_TOP_ONE_STEP_TEXT">Drone Control lets you control your Drone using a Gamepad controller and a Sony
+        SmartEyeglass to improve your flight experience</string>
+    <string name="DG_CONNECT_DEVICES">Connect the devices below to start your flight:</string>
+    <string name="DG_CONNECT_DS">Connect your Gamepad Controller</string>
+    <string name="DG_CONNECT_SEG">Connect your SmartEyeglass (optional)</string>
+    <string name="DG_CONNECT_PARROT">Connect your Drone device</string>
+    <string name="DG_SELECT_DEVICE_TO_CONNECT">Select the device you want to connect to:</string>
+    <string name="DG_CONNECT_TO_WIFI">Connect to the WiFi of the device you want to pilot</string>
+    <string name="DG_TURN_ON_BT">Turn Bluetooth on?</string>
+    <string name="DG_WAITING_FOR_CONNECTION">Detecting your device</string>
+    <string name="gamepad_needed">You need a gamepad controller to pilot your Parrot Device</string>
+
+    <!-- Keymap -->
+    <string name="calibration_message_done">Calibration done!</string>
+    <string name="command_camera_down">Camera look down</string>
+    <string name="command_camera_left">Camera look left</string>
+    <string name="command_camera_up">Camera look up</string>
+    <string name="command_camera_right">Camera look right</string>
+    <string name="command_emergency">Emergency</string>
+    <string name="command_flip_back">Flip back</string>
+    <string name="command_flip_forward">Flip forward</string>
+    <string name="command_flip_left">Flip left</string>
+    <string name="command_flip_right">Flip right</string>
+    <string name="command_gaz_yaw">Gaz and yaw</string>
+    <string name="command_high_jump">High jump</string>
+    <string name="command_land">Land</string>
+    <string name="command_long_jump">Long jump</string>
+    <string name="command_move_back_forward">Move back and forward (Hold L2 to go faster)</string>
+    <string name="command_pitch_roll">Pitch and roll</string>
+    <string name="command_ondulation">Ondulation</string>
+    <string name="command_slalom">Slalom</string>
+    <string name="command_slow_shake">Slow shake</string>
+    <string name="command_spin">Spin</string>
+    <string name="command_spin_jump">Spin jump</string>
+    <string name="command_spiral">Spiral</string>
+    <string name="command_take_off">Take Off</string>
+    <string name="command_take_pic">Take picture</string>
+    <string name="command_rec">Start/Stop recording</string>
+    <string name="command_toggle_HUD">Toggle HUD</string>
+    <string name="command_turn_left_right">Turn left and right (Hold R2 to turn faster)</string>
+    <string name="dialog_delete_files_message">Deleting files...</string>
+    <string name="dialog_sdcard_full_message">Bebop\'s internal storage is full.\nDo you want to format it?\nWARNING: All photos and videos will be lost!</string>
+    <string name="toast_sdcard_full_message">Not enough memory</string>
+    <string name="dialog_sdcard_full_title">Warning</string>
+    <string name="keymapping_title">CONTROLLER KEYMAPPING</string>
+    <string name="toast_picture_error">Could not take picture!</string>
+    <string name="toast_wifi_connection_lost">Wi-Fi signal too weak. Movements blocked!</string>
+
+    <!-- Settings -->
+    <string name="settings_preference_title">Device Settings</string>
+    <string name="join_pitch_yam_joystick">Join pitch and yaw on the same joystick</string>
+    <string name="auto_piloting_mode">Auto Piloting Mode</string>
+    <string name="max_fence_low_wifi">Limit drone control when wifi signal is low</string>
+    <string name="limit_max_fence">Limit Max Range</string>
+    <string name="check_option_to_outdoor_mode">Check this option if you are piloting drone outdoor</string>
+    <string name="outdoor_mode">Outdoor Mode</string>
+    <string name="adjust_max_height">Adjust Max Height</string>
+    <string name="select_sensitivity">Select sensitivity</string>
+    <string name="gamepad_control_sensitivity">Gamepad Sensitivity</string>
+    <string name="save_home_location_title">Save Home Location</string>
+    <string name="go_home_title">Go Home</string>
+    <string name="title_activity_about">About Activity</string>
+
+    <string name="preference_logging_summary">Allow glass events to be logged into internal file</string>
+    <string name="message_emergency">Take off disabled</string>
+
+</resources>

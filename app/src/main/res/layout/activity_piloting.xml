@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~  Copyright (C) 2015 Sony Mobile Communications Inc.
+  ~
+  ~  All rights reserved.
+  ~
+  ~  Redistribution and use in source and binary forms, with or without
+  ~  modification, are permitted provided that the following conditions are met:
+  ~
+  ~  1. Redistributions of source code must retain the above copyright notice, this
+  ~     list of conditions and the following disclaimer.
+  ~
+  ~  2. Redistributions in binary form must reproduce the above copyright notice,
+  ~     this list of conditions and the following disclaimer in the documentation
+  ~     and/or other materials provided with the distribution.
+  ~  3. Neither the name of the copyright holder nor the names
+  ~     of its contributors may be used to endorse or promote products derived from
+  ~     this software without specific prior written permission.
+  ~
+  ~  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+  ~  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+  ~  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+  ~  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+  ~  FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+  ~  DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+  ~  SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  ~  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  ~  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  ~  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:keepScreenOn="true"
+                tools:context=".PilotingActivity">
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:scaleType="centerCrop"/>
+
+    <SurfaceView
+        android:id="@+id/surfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/emergencyBt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/activity_margin"
+        android:background="@drawable/rounded_shape_overlay"
+        android:gravity="center"
+        android:padding="@dimen/inner_margin"
+        android:text="EMERGENCY"
+        android:textColor="@android:color/white"/>
+
+    <RelativeLayout
+        android:id="@+id/status_shadow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="@dimen/activity_margin"
+        android:background="@drawable/rounded_shape_overlay">
+
+        <ImageView
+            android:id="@+id/iv_glass_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="4dp"
+            android:background="@drawable/ic_glass_off"
+            android:padding="@dimen/inner_margin"/>
+
+        <ImageView
+            android:id="@+id/bar_1"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="4dp"
+            android:layout_toRightOf="@+id/iv_glass_status"
+            android:background="@android:color/black"
+            android:padding="@dimen/inner_margin"/>
+
+        <ImageView
+            android:id="@+id/iv_wifi_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="4dp"
+            android:layout_toRightOf="@id/bar_1"
+            android:background="@drawable/ic_no_signal"/>
+
+        <ImageView
+            android:id="@+id/bar_2"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="4dp"
+            android:layout_toRightOf="@+id/iv_wifi_status"
+            android:background="@android:color/black"
+            android:padding="@dimen/inner_margin"/>
+
+        <ImageView
+            android:id="@+id/iv_battery_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="4dp"
+            android:layout_toRightOf="@id/bar_2"
+            android:background="@drawable/ic_battery_1"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/left_vertical_bar"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="@dimen/activity_margin"
+        android:layout_marginLeft="@dimen/activity_margin"
+        android:layout_marginRight="@dimen/activity_margin"
+        android:layout_marginTop="@dimen/activity_margin">
+
+        <RelativeLayout
+            android:id="@+id/shadow_drone_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_shape_overlay">
+
+            <ImageView
+                android:id="@+id/iv_drone_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/shadow_speed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/shadow_drone_img"
+            android:layout_marginTop="@dimen/inner_margin"
+            android:background="@drawable/rounded_shape_overlay"
+            android:visibility="invisible">
+
+            <ImageView
+                android:id="@+id/iv_speed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_speed"/>
+
+            <TextView
+                android:id="@+id/tv_speed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/shadow_altitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/shadow_speed"
+            android:layout_marginTop="@dimen/inner_margin"
+            android:background="@drawable/rounded_shape_overlay"
+            android:visibility="invisible">
+
+            <ImageView
+                android:id="@+id/iv_altitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_altitude"/>
+
+            <TextView
+                android:id="@+id/tv_altitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/shadow_drone_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_shape_overlay"
+            android:visibility="invisible">
+
+            <TextView
+                android:id="@+id/tv_drone_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/thumbnail_shadow"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/status_shadow"
+        android:layout_marginLeft="@dimen/activity_margin"
+        android:layout_marginRight="@dimen/activity_margin"
+        android:background="@drawable/rounded_shape_overlay"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/photo_download"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:clickable="true"
+            android:scaleType="centerCrop"
+            android:visibility="invisible"/>
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/bt_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="@dimen/activity_margin"
+        android:background="@drawable/btn_gamepad"/>
+
+    <RelativeLayout
+        android:id="@+id/calibration_fragment"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        tools:layout="@layout/calibration"/>
+
+    <ImageButton
+        android:id="@+id/bt_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/activity_margin"
+        android:layout_toRightOf="@+id/bt_left"
+        android:background="@drawable/btn_settings"/>
+
+    <RelativeLayout
+        android:id="@+id/rec_shadow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/rounded_shape_overlay"
+        android:layout_margin="@dimen/activity_margin"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/iv_rec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/rec"/>
+
+        <Chronometer
+            android:id="@+id/rec_chrono"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:format="%s"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/inner_margin"
+            android:layout_marginRight="@dimen/inner_margin"
+            android:layout_toRightOf="@+id/iv_rec"/>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/fragments_frame"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/activity_margin"
+        android:layout_toRightOf="@+id/left_vertical_bar">
+    </FrameLayout>
+
+</RelativeLayout>

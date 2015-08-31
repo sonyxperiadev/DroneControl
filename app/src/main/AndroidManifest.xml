@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~  Copyright (C) 2015 Sony Mobile Communications Inc.
+  ~
+  ~  All rights reserved.
+  ~
+  ~  Redistribution and use in source and binary forms, with or without
+  ~  modification, are permitted provided that the following conditions are met:
+  ~
+  ~  1. Redistributions of source code must retain the above copyright notice, this
+  ~     list of conditions and the following disclaimer.
+  ~
+  ~  2. Redistributions in binary form must reproduce the above copyright notice,
+  ~     this list of conditions and the following disclaimer in the documentation
+  ~     and/or other materials provided with the distribution.
+  ~  3. Neither the name of the copyright holder nor the names
+  ~     of its contributors may be used to endorse or promote products derived from
+  ~     this software without specific prior written permission.
+  ~
+  ~  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+  ~  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+  ~  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+  ~  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+  ~  FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+  ~  DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+  ~  SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  ~  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  ~  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  ~  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  -->
+
+<manifest package="com.sonymobile.dronecontrol"
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.sony.smarteyeglass.permission.SMARTEYEGLASS"/>
+    <uses-permission android:name="com.sonyericsson.extras.liveware.aef.EXTENSION_PERMISSION"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        tools:replace="android:label">
+        <activity android:name="com.sonymobile.dronecontrol.activity.SplashActivity"
+                  android:configChanges="orientation|screenSize"
+                  android:label="@string/app_name"
+                  android:screenOrientation="landscape"
+                  android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.sonymobile.dronecontrol.activity.MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape">
+        </activity>
+        <activity
+            android:name="com.sonymobile.dronecontrol.activity.RollingSpiderActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen">
+        </activity>
+        <activity
+            android:name="com.sonymobile.dronecontrol.activity.BebopActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen">
+        </activity>
+        <activity
+            android:name="com.sonymobile.dronecontrol.activity.JumpingSumoActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen">
+        </activity>
+        <activity
+            android:name=".activity.AboutActivity"
+            android:exported="true"
+            android:label="@string/app_name">
+        </activity>
+
+        <service android:name="com.parrot.arsdk.ardiscovery.ARDiscoveryService"/>
+        <service android:name=".liveware.DroneControlExtensionService"/>
+        <service android:name="com.sonyericsson.extras.liveware.extension.util.TunnelService">
+            <intent-filter>
+                <action android:name="com.sonyericsson.extras.liveware.aef.tunnel.action.BIND"/>
+            </intent-filter>
+        </service>
+
+        <receiver android:name=".liveware.DroneControlExtensionReceiver">
+            <intent-filter>
+
+                <!-- Generic extension intents. -->
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+                <action android:name="com.sonyericsson.extras.liveware.aef.registration.ACCESSORY_CONNECTION"/>
+                <action android:name="com.sonyericsson.extras.liveware.aef.registration.EXTENSION_REGISTER_REQUEST"/>
+
+                <!-- Notification intents -->
+                <action android:name="com.sonyericsson.extras.liveware.aef.notification.REFRESH_REQUEST"/>
+                <action android:name="com.sonyericsson.extras.liveware.aef.notification.VIEW_EVENT_DETAIL"/>
+
+                <!-- Widget intents -->
+                <action android:name="com.sonyericsson.extras.aef.widget.ONTOUCH"/>
+                <action android:name="com.sonyericsson.extras.aef.widget.START_REFRESH_IMAGE_REQUEST"/>
+                <action android:name="com.sonyericsson.extras.aef.widget.STOP_REFRESH_IMAGE_REQUEST"/>
+                <action android:name="com.sonyericsson.extras.liveware.extension.util.widget.scheduled.refresh"/>
+
+                <!-- Control intents -->
+                <action android:name="com.sonyericsson.extras.aef.control.ERROR"/>
+                <action android:name="com.sonyericsson.extras.aef.control.KEY_EVENT"/>
+                <action android:name="com.sonyericsson.extras.aef.control.MENU_ITEM_SELECTED"/>
+                <action android:name="com.sonyericsson.extras.aef.control.OBJECT_CLICK_EVENT"/>
+                <action android:name="com.sonyericsson.extras.aef.control.PAUSE"/>
+                <action android:name="com.sonyericsson.extras.aef.control.RESUME"/>
+                <action android:name="com.sonyericsson.extras.aef.control.START"/>
+                <action android:name="com.sonyericsson.extras.aef.control.STOP"/>
+                <action android:name="com.sonyericsson.extras.aef.control.SWIPE_EVENT"/>
+                <action android:name="com.sonyericsson.extras.aef.control.TOUCH_EVENT"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>
